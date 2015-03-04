@@ -1,13 +1,14 @@
-FROM java:7
+FROM centos:6.6
 MAINTAINER Nicola Ferraro <nibbio84@gmail.com>
+
+RUN yum install -y java-1.7.0-openjdk.x86_64
+ENV JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.75.x86_64/jre
 
 RUN mkdir /hbase-setup
 WORKDIR /hbase-setup
 
 ADD ./install-hbase.sh /hbase-setup/
 RUN ./install-hbase.sh
-
-ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
 
 # zookeeper
 EXPOSE 2181
