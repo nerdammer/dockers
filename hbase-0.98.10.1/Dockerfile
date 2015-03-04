@@ -6,6 +6,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.75.x86_64/jre
 
 RUN yum install -y wget
 RUN yum install -y nc
+RUN yum install -y tar
 
 RUN mkdir /hbase-setup
 WORKDIR /hbase-setup
