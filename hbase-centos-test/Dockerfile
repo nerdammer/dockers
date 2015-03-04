@@ -1,7 +1,7 @@
 FROM centos:6.6
 MAINTAINER Nicola Ferraro <nibbio84@gmail.com>
 
-RUN yum install java-1.7.0-openjdk.x86_64
+RUN yum install -y java-1.7.0-openjdk.x86_64
 
 RUN mkdir /hbase-setup
 WORKDIR /hbase-setup
