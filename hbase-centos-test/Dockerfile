@@ -8,8 +8,8 @@ RUN echo $JAVA_HOME
 RUN mkdir /hbase-setup
 WORKDIR /hbase-setup
 
-ADD ./install-hbase.sh /hbase-setup/
-RUN ./install-hbase.sh
+#ADD ./install-hbase.sh /hbase-setup/
+#RUN ./install-hbase.sh
 
 #ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
 
