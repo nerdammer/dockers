@@ -14,6 +14,8 @@ WORKDIR /hbase-setup
 ADD ./install-hbase.sh /hbase-setup/
 RUN ./install-hbase.sh
 
+RUN /opt/hbase/bin/hbase-config.sh
+
 # zookeeper
 EXPOSE 2181
 # HBase Master API port
