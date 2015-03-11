@@ -19,4 +19,4 @@ RUN export VER=`sbt version | tail -1 | cut -f2`
 # Pre-fetch dependencies and kill
 RUN sbt reStart
 
-CMD sbt reStart shell
+CMD ["sbt", "reStart", "shell"]
