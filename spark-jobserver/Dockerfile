@@ -21,6 +21,6 @@ RUN sbt reStart
 
 EXPOSE 8090
 
-ADD ./start-jobserver.sh .
+ADD ./start-jobserver.sh ./
 
 CMD ./start-jobserver.sh
