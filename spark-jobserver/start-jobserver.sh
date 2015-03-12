@@ -1,3 +1,6 @@
 #!/bin/bash
 
-sbt reStart shell
+sbt reStart
+
+echo "JobServer Started"
+tail -f /dev/null
