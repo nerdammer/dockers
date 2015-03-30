@@ -1,35 +1,4 @@
-FROM centos:6.6
+FROM nerdammer/hbase:1.0.0
 MAINTAINER Nicola Ferraro <nibbio84@gmail.com>
 
-RUN yum install -y java-1.7.0-openjdk.x86_64
-ENV JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.75.x86_64/jre
-
-RUN yum install -y wget
-RUN yum install -y nc
-RUN yum install -y tar
-
-RUN mkdir /hbase-setup
-WORKDIR /hbase-setup
-
-ADD ./install-hbase.sh /hbase-setup/
-RUN ./install-hbase.sh
-
-RUN /opt/hbase/bin/hbase-config.sh
-
-# Zookeeper
-EXPOSE 2181
-
-# HBase Master Info port
-EXPOSE 16010
-
-# HBase Regionserver port
-EXPOSE 16020
-
-# HBase Regionserver Info port
-EXPOSE 16030
-
-# HBase REST
-EXPOSE 8080
-
-
-CMD /opt/hbase/bin/hbase shell
+CMD /opt/hbase/bin/start-hbase.sh && /opt/hbase/bin/hbase shell
