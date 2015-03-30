@@ -32,4 +32,4 @@ EXPOSE 16030
 EXPOSE 8080
 
 
-CMD /opt/hbase/bin/hbase master start
+CMD /opt/hbase/bin/hbase shell
