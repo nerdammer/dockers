@@ -2,7 +2,7 @@ FROM centos:6.6
 MAINTAINER Nicola Ferraro <nibbio84@gmail.com>
 
 RUN yum install -y java-1.7.0-openjdk.x86_64
-ENV JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.75.x86_64/jre
+ENV JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.79.x86_64/jre
 
 RUN yum install -y wget
 RUN yum install -y nc
@@ -16,6 +16,9 @@ RUN ./install-hbase.sh
 
 RUN /opt/hbase/bin/hbase-config.sh
 
+ADD hbase-site.xml /opt/hbase/conf/hbase-site.xml
+ADD start-pseudo-distributed.sh /opt/hbase/bin/start-pseudo-distributed.sh
+
 # zookeeper
 EXPOSE 2181
 # HBase Master API port
@@ -27,4 +30,6 @@ EXPOSE 60020
 # HBase Regionserver web UI
 EXPOSE 60030
 
-CMD /opt/hbase/bin/hbase master start
+WORKDIR /opt/hbase/bin
+
+CMD /opt/hbase/bin/start-pseudo-distributed.sh
