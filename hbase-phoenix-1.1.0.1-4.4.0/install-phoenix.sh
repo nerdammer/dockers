@@ -6,5 +6,5 @@ rm -f phoenix-4.4.0-HBase-1.1-bin.tar.gz
 ln -s /opt/phoenix-4.4.0-HBase-1.1-bin /opt/phoenix
 
 cp /opt/phoenix/phoenix-server-4.4.0-HBase-1.1.jar /opt/hbase/lib/
-cp /opt/phoenix-core-4.4.0-HBase-1.1.jar /opt/hbase/lib/
+cp /opt/phoenix/phoenix-core-4.4.0-HBase-1.1.jar /opt/hbase/lib/
 
