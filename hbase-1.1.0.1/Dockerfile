@@ -2,7 +2,7 @@ FROM centos:6.6
 MAINTAINER Nicola Ferraro <nibbio84@gmail.com>
 
 RUN yum install -y java-1.7.0-openjdk.x86_64
-ENV JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.79.x86_64/jre
+ENV JAVA_HOME=/usr/lib/jvm/jre
 
 RUN yum install -y wget
 RUN yum install -y nc
@@ -31,5 +31,7 @@ EXPOSE 60020
 EXPOSE 60030
 
 WORKDIR /opt/hbase/bin
+
+ENV PATH=$PATH:/opt/hbase/bin
 
 CMD /opt/hbase/bin/start-pseudo-distributed.sh
