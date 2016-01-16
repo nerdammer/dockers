@@ -29,8 +29,6 @@ EXPOSE 60010
 EXPOSE 60020
 # HBase Regionserver web UI
 EXPOSE 60030
-# HBase Master Second Web UI
-EXPOSE 16010
 
 WORKDIR /opt/hbase/bin
 
