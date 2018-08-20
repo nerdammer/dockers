@@ -1,4 +1,4 @@
-FROM centos:6.9
+FROM centos:latest
 MAINTAINER Nicola Ferraro <nibbio84@gmail.com>
 
 RUN yum install -y java-1.8.0-openjdk
